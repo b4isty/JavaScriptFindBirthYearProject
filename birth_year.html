@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Birth Year</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+<body>
+<h2 class="text-center" style="color:#1f87ff;">Here you can find your Birth Year</h2>
+<center>
+    <div class="container">
+
+        <form action=""  style="margin-top: 200px">
+            <div class="form-group">
+                <label for="number">Your Age</label>
+                <input class="form-control" style="height: 30px; width: 400px;  padding-left:10px;" type="number"
+                       name="number" id="num" placeholder="Type Your Age">
+            </div>
+                <button type="button" value="Find year" id="button">click here</button>
+                <p id="year">year</p>
+
+        </form>
+    </div>
+</center>
+<script>
+    function calculate() {
+        var number = document.getElementById("num").value;
+        if (number == "" || number == 0) {
+            window.alert("please type your correct age!")
+
+        }
+        var date = new Date().getFullYear();
+        var birthYear = date - number;
+        document.getElementById("year").style.display = "block";
+        document.getElementById("year").innerHTML = "YOUR BIRTH YEAR IS " + birthYear;
+    }
+
+
+    document.getElementById("year").style.display = "none";
+    document.getElementById("button").onclick = function () {
+        calculate();
+    };
+</script>
+</body>
+</html>
